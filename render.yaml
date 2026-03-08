@@ -1,0 +1,15 @@
+services:
+  # ML Service (FastAPI + XGBoost)
+  - type: web
+    name: solar-intel-ml
+    runtime: docker
+    dockerfilePath: ./ml-service/Dockerfile
+    dockerContext: ./ml-service
+    region: oregon
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: MONGODB_URI
+        sync: false  # Set manually in Render dashboard for security
+      - key: PORT
+        value: 10000

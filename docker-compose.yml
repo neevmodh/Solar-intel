@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  # ─── Next.js Web App ───
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.local
+    environment:
+      - ML_SERVICE_URL=https://solar-intel-ml.onrender.com/predict
+    depends_on:
+      ml-service:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # ─── FastAPI ML Service ───
+  ml-service:
+    build:
+      context: ./ml-service
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
