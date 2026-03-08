@@ -1,0 +1,8 @@
+node_modules
+.next
+.git
+.env*.local
+*.md
+.DS_Store
+ml-service/
+__pycache__
