@@ -425,7 +425,7 @@ npm run seed       # Seed database
 
 ## 👨‍💻 Author
 
-**Jaimin Parmar** — Built with ❤️ for **HACKaMINeD 2026** 🏆
+**Neev Modh** — Built with ❤️ for **HACKaMINeD 2026** 🏆
 
 ---
 
