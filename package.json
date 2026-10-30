@@ -22,7 +22,7 @@
     "axios": "^1.13.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "express-rate-limit": "^8.2.1",
+    "express-rate-limit": "^8.7.2",
     "framer-motion": "^12.35.0",
     "lucide-react": "^0.577.0",
     "mongoose": "^9.2.4",
